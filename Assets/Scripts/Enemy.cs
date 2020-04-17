@@ -4,17 +4,26 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    [Header("Base stats")]
     public float health;
     public float searchRadius;
+    public float atackRadius;
     public float speed;
+
+    [Header("Atack")]
+    public int atackDamage;
+    public float atackRate;
+
 
     Rigidbody2D rb;
     Animator anim;
     Player player;
     public bool isPlayerSeen = false;
+    bool isAlive;
 
     private void Start()
     {
+        isAlive = true;
         rb = GetComponent<Rigidbody2D>();
         player = FindObjectOfType<Player>();
         anim = GetComponentInChildren<Animator>();
@@ -23,10 +32,13 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Rotate();
-        SearchPlayer();
-        if (isPlayerSeen) { Move(player.transform.position + (-transform.position)); }
-                     else { Move(new Vector3(0, 0, 0));  }
+        if (isAlive)
+        {
+            Rotate();
+            SearchPlayer();
+            if (isPlayerSeen) { Move(player.transform.position + (-transform.position)); }
+            else { Move(new Vector3(0, 0, 0)); }
+        }
       
     }
 
@@ -46,9 +58,21 @@ public class Enemy : MonoBehaviour
     {
         var a = Mathf.Abs(transform.position.x - player.transform.position.x);
         var b = Mathf.Abs(transform.position.y - player.transform.position.y);
-        if (Mathf.Sqrt(a * a + b * b) < searchRadius) { isPlayerSeen = true; }
-        else { isPlayerSeen = false; }
+        var distansToPlayer = Mathf.Sqrt(a * a + b * b);
+        if (distansToPlayer < searchRadius && distansToPlayer > atackRadius) { isPlayerSeen = true; }
+        else 
+        {
+            isPlayerSeen = false;
+            if (distansToPlayer < atackRadius)
+                Atack();
+        }
         anim.SetBool("isSeen", isPlayerSeen);
+    }
+
+    void Atack()
+    {
+        anim.SetTrigger("Atack");
+        player.GetDamage(atackDamage);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -59,10 +83,18 @@ public class Enemy : MonoBehaviour
             health -= damage.damage;
 
             if (health <= 0)
-                Destroy(gameObject);
+            {
+                Death();
+            }
 
             Destroy(collision.gameObject);
         }
 
     }   
+
+    void Death()
+    {
+        anim.SetTrigger("Death");
+        isAlive = false;
+    }
 }

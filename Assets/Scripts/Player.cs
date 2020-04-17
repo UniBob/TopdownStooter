@@ -7,11 +7,10 @@ public class Player : MonoBehaviour
     public GameObject shotPrefab;
     public Transform shotPosition;
     public float fireRate;
-
     Animator anim;
 
     float nextShotTime;
-    float health;
+    int health;
 
 
     // Start is called before the first frame update
@@ -30,5 +29,10 @@ public class Player : MonoBehaviour
             nextShotTime = Time.time + fireRate;
             anim.SetTrigger("Shoot");
         }
+    }
+
+    public void GetDamage(int damage)
+    {
+        health -= damage;
     }
 }
