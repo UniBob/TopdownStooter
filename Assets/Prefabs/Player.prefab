@@ -82,6 +82,8 @@ MonoBehaviour:
     type: 3}
   shotPosition: {fileID: 2379061525268145937}
   fireRate: 0.4
+  currentHealth: 0
+  maxHealth: 100
 --- !u!114 &2379061525940416067
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -94,7 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47cb8163c4798c5409a0377609d8eca3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2.7
+  speed: 7
 --- !u!58 &2379061525940416071
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -142,6 +144,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2379061526052374192}
   - component: {fileID: 2379061526052374193}
+  - component: {fileID: 1292501734}
   m_Layer: 10
   m_Name: Sprite
   m_TagString: Untagged
@@ -213,3 +216,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1292501734
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2379061526052374195}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c5dcca09f5b014c43a46b516ef282d17, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

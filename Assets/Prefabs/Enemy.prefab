@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4415930160745426020}
   - component: {fileID: 8829416696744854530}
+  - component: {fileID: 665421666}
   m_Layer: 8
   m_Name: Sprite
   m_TagString: Untagged
@@ -25,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5216103500427453531}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.286, y: -1.304, z: 0}
+  m_LocalPosition: {x: -0.012, y: 0.701, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 9110573601621658820}
@@ -81,6 +82,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &665421666
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5216103500427453531}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fe77bc37eeda3c742be801c8c947fbcb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5400048433094002975
 GameObject:
   m_ObjectHideFlags: 0
@@ -128,9 +148,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.031760454, y: -0.06616759}
+  m_Offset: {x: -0.0009481311, y: -0.32978374}
   serializedVersion: 2
-  m_Radius: 0.7249694
+  m_Radius: 0.9235379
 --- !u!114 &8759062102805441691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,8 +164,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  searchRadius: 1
+  searchRadius: 15
+  atackRadius: 3
   speed: 0.1
+  atackDamage: 50
+  atackRate: 3
   isPlayerSeen: 0
 --- !u!50 &-1230739271425696505
 Rigidbody2D:

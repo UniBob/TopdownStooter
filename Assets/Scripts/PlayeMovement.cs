@@ -18,8 +18,15 @@ public class PlayeMovement : MonoBehaviour
     
     void Update()
     {
-        Move();
-        Rotate();
+        if (anim.GetBool("isAlive"))
+        {
+            Move();
+            Rotate();
+        }
+        else
+        {
+            rb.velocity = new Vector3(0,0,0);
+        }
     }
 
     private void Move()

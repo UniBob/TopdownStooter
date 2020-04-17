@@ -20,9 +20,11 @@ public class Enemy : MonoBehaviour
     Player player;
     public bool isPlayerSeen = false;
     bool isAlive;
+    float nextAtackTime;
 
     private void Start()
     {
+        nextAtackTime = Time.time;
         isAlive = true;
         rb = GetComponent<Rigidbody2D>();
         player = FindObjectOfType<Player>();
@@ -71,14 +73,18 @@ public class Enemy : MonoBehaviour
 
     void Atack()
     {
-        anim.SetTrigger("Atack");
-        player.GetDamage(atackDamage);
+        if (nextAtackTime <= Time.time && player.GetStatus())
+        {
+            nextAtackTime = Time.time + atackRate;
+            anim.SetTrigger("Atack");
+            player.GetDamage(atackDamage);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         var damage = collision.GetComponent<DamageDiller>();
-        if (damage != null)
+        if (damage != null && isAlive)
         {
             health -= damage.damage;
 
@@ -96,5 +102,6 @@ public class Enemy : MonoBehaviour
     {
         anim.SetTrigger("Death");
         isAlive = false;
+        rb.velocity = new Vector3(0, 0, 0);
     }
 }

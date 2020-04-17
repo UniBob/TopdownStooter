@@ -18,7 +18,7 @@ TagManager:
   - Enemy
   - Bullet
   - Player
-  - 
+  - PickUps
   - 
   - 
   - 
@@ -40,9 +40,18 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: pickUps
+    uniqueID: 1348172849
+    locked: 0
   - name: bullet
     uniqueID: 664580841
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: enemy
+    uniqueID: 3951259057
+    locked: 0
+  - name: player
+    uniqueID: 1336590053
     locked: 0
