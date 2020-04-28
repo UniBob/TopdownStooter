@@ -40,6 +40,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: player
+    uniqueID: 1336590053
+    locked: 0
   - name: pickUps
     uniqueID: 1348172849
     locked: 0
@@ -51,7 +54,4 @@ TagManager:
     locked: 0
   - name: enemy
     uniqueID: 3951259057
-    locked: 0
-  - name: player
-    uniqueID: 1336590053
     locked: 0

@@ -16,7 +16,7 @@ public class PlayeMovement : MonoBehaviour
     }
 
     
-    void Update()
+    void FixedUpdate()
     {
         if (anim.GetBool("isAlive"))
         {

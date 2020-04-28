@@ -29,6 +29,7 @@ public class Enemy : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         player = FindObjectOfType<Player>();
         anim = GetComponentInChildren<Animator>();
+        anim.SetBool("isAlive", true);
     }
 
     // Update is called once per frame
@@ -100,7 +101,7 @@ public class Enemy : MonoBehaviour
 
     void Death()
     {
-        anim.SetTrigger("Death");
+        anim.SetBool("isAlive",false);
         isAlive = false;
         rb.velocity = new Vector3(0, 0, 0);
     }
