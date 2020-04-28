@@ -92,7 +92,7 @@ Animator:
   m_GameObject: {fileID: 5216103500427453531}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: fe77bc37eeda3c742be801c8c947fbcb, type: 2}
+  m_Controller: {fileID: 22100000, guid: 66ab55410a615c3498ff613841a2ca77, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -112,7 +112,6 @@ GameObject:
   - component: {fileID: 9110573601621658820}
   - component: {fileID: 8400026880502873485}
   - component: {fileID: 8759062102805441691}
-  - component: {fileID: 4899926097909121389}
   - component: {fileID: -1230739271425696505}
   m_Layer: 8
   m_Name: Enemy
@@ -171,23 +170,6 @@ MonoBehaviour:
   atackDamage: 10
   atackRate: 2
   isPlayerSeen: 0
---- !u!114 &4899926097909121389
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5400048433094002975}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bad125eeea931724191852507af8baa3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  searchRadius: 15
-  atackRadius: 2.8
-  speed: 4
-  atackDamage: 10
-  atackRate: 3
 --- !u!50 &-1230739271425696505
 Rigidbody2D:
   serializedVersion: 4

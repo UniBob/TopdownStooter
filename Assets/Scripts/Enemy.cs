@@ -39,8 +39,14 @@ public class Enemy : MonoBehaviour
         {
             Rotate();
             SearchPlayer();
-            if (isPlayerSeen) { Move(player.transform.position + (-transform.position)); }
-            else { Move(new Vector3(0, 0, 0)); }
+            if (isPlayerSeen) 
+            {
+                Move(player.transform.position + (-transform.position)); 
+            }
+            else 
+            {
+                Move(Vector3.zero); 
+            }
         }
       
     }
@@ -103,6 +109,6 @@ public class Enemy : MonoBehaviour
     {
         anim.SetBool("isAlive",false);
         isAlive = false;
-        rb.velocity = new Vector3(0, 0, 0);
+        rb.velocity = Vector3.zero;
     }
 }
