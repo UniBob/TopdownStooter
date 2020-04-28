@@ -84,8 +84,13 @@ public class Enemy : MonoBehaviour
         {
             nextAtackTime = Time.time + atackRate;
             anim.SetTrigger("Atack");
-            player.GetDamage(atackDamage);
+            DoDamageToPlayer();
         }
+    }
+
+    public void DoDamageToPlayer()
+    {
+        player.GetDamage(atackDamage);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
