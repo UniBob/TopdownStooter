@@ -93,17 +93,22 @@ public class Enemy : MonoBehaviour
         var damage = collision.GetComponent<DamageDiller>();
         if (damage != null && isAlive)
         {
-            health -= damage.damage;
-
-            if (health <= 0)
-            {
-                Death();
-            }
+            GetDamage(damage.damage);
 
             Destroy(collision.gameObject);
         }
 
     }   
+
+    public void GetDamage(float damage)
+    {
+        health -= damage;
+
+        if (health <= 0)
+        {
+            Death();
+        }
+    }
 
     void Death()
     {
