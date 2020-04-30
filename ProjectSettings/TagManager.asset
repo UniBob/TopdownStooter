@@ -40,8 +40,17 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: player
-    uniqueID: 1336590053
+  - name: Sand
+    uniqueID: 3325436533
+    locked: 0
+  - name: Road
+    uniqueID: 3737582239
+    locked: 0
+  - name: Water
+    uniqueID: 1422013957
+    locked: 0
+  - name: Additional
+    uniqueID: 3763946469
     locked: 0
   - name: pickUps
     uniqueID: 1348172849
@@ -54,4 +63,7 @@ TagManager:
     locked: 0
   - name: enemy
     uniqueID: 3951259057
+    locked: 0
+  - name: player
+    uniqueID: 1336590053
     locked: 0
